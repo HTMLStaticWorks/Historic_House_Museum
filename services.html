@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours & Events | Historic House Museum</title>
+    <meta name="description" content="Explore our range of public tours, virtual experiences, and elegant event rental options.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-house-door-fill text-primary me-2 fs-3"></i>
+                <span class="fw-bold fs-4 font-heading">HISTORIC<span class="text-primary">HOUSE</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navOffcanvas" aria-controls="navOffcanvas" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="navOffcanvas" aria-labelledby="navOffcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="navOffcanvasLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="services.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Tours & Events
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm">
+                                <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                                <li><a class="dropdown-item" href="service-details.html">Virtual Tours</a></li>
+                                <li><a class="dropdown-item" href="service-details.html">Event Rentals</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3 d-flex align-items-center gap-2">
+                            <button class="glow-toggle" id="rtl-toggle" title="Toggle RTL">
+                                <i class="bi bi-translate"></i>
+                            </button>
+                            <button class="glow-toggle" id="theme-toggle" title="Toggle Theme">
+                                <i class="bi bi-sun-fill"></i>
+                            </button>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a href="login.html" class="btn btn-primary btn-sm px-4">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="hero-section" style="background-image: url('assets/images/services-hero.png'); height: 50vh;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center">
+            <h1 class="display-3 fw-bold mb-3">Tours & Events</h1>
+            <p class="lead">Curated experiences designed to transport you back in time.</p>
+        </div>
+    </header>
+
+    <!-- Public Tours Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <h2 class="display-5">Guided Public Tours</h2>
+                    <p class="text-muted">Available daily from 10:00 AM to 5:00 PM.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card p-0 overflow-hidden">
+                        <div class="ratio ratio-16x9">
+                            <img src="assets/images/hero-home.png" class="img-fluid object-fit-cover" alt="Grand Estate Tour">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-primary">Daily</span>
+                                <span class="text-primary fw-bold">$25</span>
+                            </div>
+                            <h5>The Grand Estate Tour</h5>
+                            <p class="text-muted small">A 60-minute walk through the primary residence, library, and grand ballroom.</p>
+                            <a href="service-details.html" class="btn btn-outline-primary btn-sm w-100">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card p-0 overflow-hidden">
+                        <div class="ratio ratio-16x9">
+                            <img src="assets/images/about-thumb.png" class="img-fluid object-fit-cover" alt="Archival Secrets">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-primary">Weekend</span>
+                                <span class="text-primary fw-bold">$35</span>
+                            </div>
+                            <h5>Archival Secrets</h5>
+                            <p class="text-muted small">Exclusive access to the basement archives and rarely seen family journals.</p>
+                            <a href="service-details.html" class="btn btn-outline-primary btn-sm w-100">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card p-0 overflow-hidden">
+                        <div class="ratio ratio-16x9">
+                            <img src="assets/images/event-candlelight.png" class="img-fluid object-fit-cover" alt="Candlelight Evening">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-primary">Special</span>
+                                <span class="text-primary fw-bold">$40</span>
+                            </div>
+                            <h5>Candlelight Evening</h5>
+                            <p class="text-muted small">Experience the mansion as it was in the 1800s, guided solely by candlelight.</p>
+                            <a href="service-details.html" class="btn btn-outline-primary btn-sm w-100">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Rentals -->
+    <section class="section-padding bg-body-tertiary">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="display-5">Breathtaking Venues</h2>
+                    <p class="lead text-muted">From intimate gatherings to grand celebrations, our estate offers a variety of historic spaces for your next event.</p>
+                    <div class="mt-4">
+                        <div class="d-flex mb-3">
+                            <div class="bg-white rounded p-3 shadow-sm me-3"><i class="bi bi-heart text-primary fs-3"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Weddings & Galas</h6>
+                                <p class="text-muted small mb-0">The perfect romantic backdrop for your special day.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="bg-white rounded p-3 shadow-sm me-3"><i class="bi bi-briefcase text-primary fs-3"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Corporate Retreats</h6>
+                                <p class="text-muted small mb-0">Inspire your team in a setting of timeless excellence.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary mt-4">Inquire About Pricing</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="ratio ratio-1x1 rounded shadow-sm overflow-hidden">
+                                <img src="assets/images/event-garden.png" class="img-fluid h-100 object-fit-cover" alt="Weddings">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="ratio ratio-1x1 rounded shadow-sm overflow-hidden">
+                                <img src="assets/images/services-hero.png" class="img-fluid h-100 object-fit-cover" alt="Corporate">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Tour Promo -->
+    <section class="section-padding bg-secondary text-white">
+        <div class="container text-center py-5">
+            <h2 class="display-4 fw-bold">Can't Visit in Person?</h2>
+            <p class="lead mb-4">Our high-fidelity 3D virtual tours offer an immersive experience from anywhere in the world.</p>
+            <a href="service-details.html" class="btn btn-light btn-lg px-5">Launch Virtual Tour</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-body-tertiary section-padding pb-4">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-4 font-heading">HISTORIC<span class="text-primary">HOUSE</span></h5>
+                    <p class="text-muted pe-lg-5">Preserving the past to inspire the future. Join us in our mission to maintain this cultural landmark for generations to come.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3">
+                    <h6 class="fw-bold mb-4">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-muted">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-muted">About Us</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-muted">Tours</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-muted">Admission</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3">
+                    <h6 class="fw-bold mb-4">Support</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="contact.html" class="text-muted">Contact</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-muted">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="fw-bold mb-4">Newsletter</h6>
+                    <p class="text-muted mb-4">Subscribe to receive updates on special events and exhibitions.</p>
+                    <form class="input-group mb-3 needs-validation" novalidate>
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25">
+            <div class="row py-3">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted mb-0">&copy; 2026 Historic House Museum. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-muted mb-0">
+                        <a href="#" class="text-muted text-decoration-none me-3">Service Policy</a>
+                        <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

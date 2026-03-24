@@ -1,0 +1,4 @@
+# robots.txt for Historic House Museum
+User-agent: *
+Allow: /
+Sitemap: https://historichousemuseum.org/sitemap.xml
