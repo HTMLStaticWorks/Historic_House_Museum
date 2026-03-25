@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initActiveLinks();
     initAOS();
     initRTL();
+    initPageTransition();
 });
 
 /**
@@ -156,4 +157,40 @@ function toggleRTL() {
     const newDir = isRTL ? 'ltr' : 'rtl';
     document.documentElement.setAttribute('dir', newDir);
     localStorage.setItem('dir', newDir);
+}
+
+/**
+ * Fade overlay while navigating between pages to mask the brief blank screen.
+ */
+function initPageTransition() {
+    const mask = document.createElement('div');
+    mask.className = 'page-transition-mask';
+    document.body.appendChild(mask);
+
+    const shouldHandle = (link) => {
+        if (!link.href) return false;
+        if (link.target && link.target !== '_self') return false;
+        if (link.hasAttribute('download') || link.getAttribute('aria-disabled') === 'true') return false;
+        const url = new URL(link.href, window.location.href);
+        if (url.origin !== window.location.origin) return false;
+        if (link.hash && url.pathname === window.location.pathname) return false;
+        return true;
+    };
+
+    const onClick = (event) => {
+        const anchor = event.target.closest('a');
+        if (!anchor || !shouldHandle(anchor)) return;
+        event.preventDefault();
+        mask.classList.add('visible');
+        const delay = 280;
+        setTimeout(() => {
+            window.location.assign(anchor.href);
+        }, delay);
+    };
+
+    document.addEventListener('click', onClick, true);
+
+    window.addEventListener('pageshow', () => {
+        mask.classList.remove('visible');
+    });
 }

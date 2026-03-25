@@ -200,6 +200,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
+/* Tours & Events dropdown button */
 /* Buttons */
 .btn-primary {
     background-color: var(--primary-color) !important;
@@ -440,4 +441,19 @@ footer.bg-light .border-secondary {
 
 @keyframes spin {
     to { transform: rotate(360deg); }
+}
+
+/* Page transition overlay keeps a soft fade while navigating between pages */
+.page-transition-mask {
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 4, 4, 0.7);
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.page-transition-mask.visible {
+    opacity: 1;
 }
