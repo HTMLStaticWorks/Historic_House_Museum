@@ -28,7 +28,7 @@
     </div>
 
     <!-- Header & Navigation -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <i class="bi bi-house-door-fill text-primary me-2 fs-3"></i>
@@ -120,30 +120,53 @@
     <section class="section-padding bg-body-tertiary">
         <div class="container">
             <h2 class="text-center mb-5">A Journey Through Time</h2>
-            <div class="row g-0">
-                <div class="col-md-6 border-end border-primary border-2 px-5 pb-5 text-md-end">
-                    <h5 class="text-primary fw-bold">1885</h5>
-                    <h4>The Foundation</h4>
-                    <p class="text-muted">Construction began on the main estate by the renowned architect Julian Sterling.</p>
-                </div>
-                <div class="col-md-6 px-5 pb-5">
-                    <!-- Blank for timeline effect -->
-                </div>
-                <div class="col-md-6 px-5 pb-5">
-                    <!-- Blank -->
-                </div>
-                <div class="col-md-6 border-start border-primary border-2 px-5 pb-5">
-                    <h5 class="text-primary fw-bold">1920</h5>
-                    <h4>The Golden Era</h4>
-                    <p class="text-muted">The estate hosted national leaders and became a center for cultural discourse.</p>
-                </div>
-                <div class="col-md-6 border-end border-primary border-2 px-5 pb-5 text-md-end">
-                    <h5 class="text-primary fw-bold">1980</h5>
-                    <h4>Public Opening</h4>
-                    <p class="text-muted">The Sterling family donated the estate to the city to be used as a public museum.</p>
-                </div>
-                <div class="col-md-6 px-5 pb-5">
-                    <!-- Blank -->
+            <div class="timeline position-relative">
+                <!-- Centered vertical line -->
+                <div class="timeline-line position-absolute top-0 bottom-0 start-50 translate-middle-x"></div>
+                
+                <!-- Timeline items -->
+                <div class="row g-0 position-relative">
+                    <!-- 1885 - Left side -->
+                    <div class="col-md-6 text-md-end pe-md-5 pb-5">
+                        <div class="timeline-item">
+                            <div class="timeline-dot bg-primary border border-4 border-white rounded-circle position-absolute start-50 translate-middle-x"></div>
+                            <h5 class="text-primary fw-bold">1885</h5>
+                            <h4>The Foundation</h4>
+                            <p class="text-muted">Construction began on the main estate by the renowned architect Julian Sterling.</p>
+                        </div>
+                    </div>
+                    <!-- Right side spacer -->
+                    <div class="col-md-6 ps-md-5 pb-5">
+                        <!-- Empty for alternating layout -->
+                    </div>
+                    
+                    <!-- Left side spacer -->
+                    <div class="col-md-6 text-md-end pe-md-5 pb-5">
+                        <!-- Empty for alternating layout -->
+                    </div>
+                    <!-- 1920 - Right side -->
+                    <div class="col-md-6 ps-md-5 pb-5">
+                        <div class="timeline-item">
+                            <div class="timeline-dot bg-primary border border-4 border-white rounded-circle position-absolute start-50 translate-middle-x"></div>
+                            <h5 class="text-primary fw-bold">1920</h5>
+                            <h4>The Golden Era</h4>
+                            <p class="text-muted">The estate hosted national leaders and became a center for cultural discourse.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 1980 - Left side -->
+                    <div class="col-md-6 text-md-end pe-md-5 pb-5">
+                        <div class="timeline-item">
+                            <div class="timeline-dot bg-primary border border-4 border-white rounded-circle position-absolute start-50 translate-middle-x"></div>
+                            <h5 class="text-primary fw-bold">1980</h5>
+                            <h4>Public Opening</h4>
+                            <p class="text-muted">The Sterling family donated the estate to the city to be used as a public museum.</p>
+                        </div>
+                    </div>
+                    <!-- Right side spacer -->
+                    <div class="col-md-6 ps-md-5 pb-5">
+                        <!-- Empty for alternating layout -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -206,7 +229,7 @@
         <div class="container">
             <div class="row g-4 mb-5">
                 <div class="col-lg-4 col-md-6">
-                    <h5 class="fw-bold mb-4 font-heading">HISTORIC<span class="text-primary">HOUSE</span></h5>
+                    <a href="index.html" class="d-inline-flex align-items-center text-decoration-none mb-4"><i class="bi bi-house-door-fill text-primary me-2 fs-3"></i><span class="fw-bold fs-4 font-heading text-body">HISTORIC<span class="text-primary">HOUSE</span></span></a>
                     <p class="text-muted pe-lg-5">Preserving the past to inspire the future. Join us in our mission to maintain this cultural landmark for generations to come.</p>
                     <div class="d-flex gap-3 mt-4">
                         <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>

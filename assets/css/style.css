@@ -55,9 +55,12 @@
 
 /* Theme-Aware Background Fixes */
 [data-bs-theme="dark"] .bg-light,
-[data-bs-theme="dark"] .bg-white,
-[data-bs-theme="dark"] .bg-body-tertiary {
+[data-bs-theme="dark"] .bg-white {
     background-color: var(--card-bg) !important;
+}
+
+[data-bs-theme="dark"] .bg-body-tertiary {
+    background-color: var(--bg-color) !important;
 }
 
 .bg-card-custom {
@@ -173,6 +176,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: var(--space-2) 0;
     min-height: 72px;
     align-items: center;
+    position: relative;
 }
 
 .navbar.scrolled {
@@ -186,13 +190,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Mobile Menu Styles */
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
     .navbar .navbar-collapse {
-        background-color: var(--card-bg);
+        position: absolute !important;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--navbar-bg);
         padding: var(--space-3);
-        margin-top: var(--space-2);
-        border-radius: 8px;
-        box-shadow: var(--shadow-sm);
+        margin-top: 0;
+        border-radius: 0 0 12px 12px;
+        box-shadow: var(--shadow-lg);
+        z-index: 1050;
+        width: 100%;
     }
     
     .navbar .navbar-nav {
@@ -210,32 +220,28 @@ h1, h2, h3, h4, h5, h6 {
     gap: var(--space-3);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .navbar .navbar-collapse {
         display: flex !important;
         flex-basis: auto;
         flex-grow: 1;
         justify-content: space-between;
         flex-wrap: nowrap;
-        overflow: hidden;
+        overflow: visible;
     }
 
     .navbar .navbar-nav {
-        width: 100%;
-        margin: 0;
-        gap: 12px; /* Tightened gap for single line fit */
+        flex-grow: 1;
+        justify-content: center;
+        gap: 20px;
         flex-wrap: nowrap;
-        justify-content: center; /* Center links by default */
+        margin: 0;
     }
 
-    /* Distribute Logo - Menu - Button */
-    .navbar .navbar-nav > li:first-child {
-        margin-left: auto;
+    .navbar .nav-item:last-child {
+        margin-left: 0;
     }
-    
-    .navbar .navbar-nav > li:nth-last-child(2) {
-        margin-right: auto;
-    }
+}
 
     .nav-link {
         font-size: 15px; /* Increased from 14px for better readability */
@@ -422,6 +428,7 @@ h1, h2, h3, h4, h5, h6 {
    ==================================== */
 .text-primary { color: var(--primary-color) !important; }
 .text-secondary { color: var(--secondary-color) !important; }
+.text-hero { color: #ffffff !important; } /* High contrast white for hero sections */
 .bg-primary { background-color: var(--primary-color) !important; }
 .bg-secondary { background-color: var(--secondary-color) !important; }
 .bg-primary-subtle { background-color: rgba(114, 47, 55, 0.1) !important; }
@@ -462,8 +469,17 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--primary-color) !important;
     color: #121212 !important;
 }
+/* Enhanced Footer Link Hover Effects */
+footer a.text-muted {
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    position: relative !important;
+}
+
 footer a.text-muted:hover {
-    color: var(--primary-color) !important; /* Lighter wine for hover on dark */
+    color: var(--primary-color) !important; /* Wine color on hover */
+    text-decoration: underline !important;
+    transform: translateY(-1px) !important;
 }
 
 footer.bg-light .text-muted,
@@ -471,9 +487,18 @@ footer.bg-light .text-muted,
     color: #4b5259 !important; /* Darker gray for light backgrounds */
 }
 
+footer.bg-light a.text-muted,
+[data-bs-theme="light"] footer a.text-muted {
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    position: relative !important;
+}
+
 footer.bg-light a.text-muted:hover,
 [data-bs-theme="light"] footer a.text-muted:hover {
     color: var(--primary-color) !important;
+    text-decoration: underline !important;
+    transform: translateY(-1px) !important;
 }
 
 footer .border-secondary {
@@ -540,6 +565,11 @@ footer.bg-light .border-secondary {
     text-align: right;
 }
 
+[dir="rtl"] .navbar-brand {
+    margin-left: var(--space-4);
+    margin-right: 0;
+}
+
 [dir="rtl"] .ms-auto {
     margin-right: auto !important;
     margin-left: 0 !important;
@@ -577,4 +607,66 @@ footer.bg-light .border-secondary {
 
 @keyframes spin {
     to { transform: rotate(360deg); }
+}
+
+/* ====================================
+   TIMELINE
+   ==================================== */
+.timeline-line {
+    width: 2px;
+    background-color: var(--primary-color);
+}
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+    z-index: 2;
+    margin-top: 6px;
+}
+
+/* ====================================
+   AUTH WRAPPER
+   ==================================== */
+.auth-wrapper a:hover {
+    text-decoration: underline !important;
+}
+
+@media (max-width: 991.98px) {
+    /* Layout for Navbar Icons on Mobile */
+    .navbar-nav .nav-item.d-flex.align-items-center.gap-2 {
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        padding: var(--space-3) 0 !important;
+        margin: var(--space-1) 0;
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+
+/* ====================================
+   DARK MODE CONTRAST OVERRIDES
+   ==================================== */
+[data-bs-theme="dark"] a,
+[data-bs-theme="dark"] .text-primary,
+[data-bs-theme="dark"] .text-secondary,
+[data-bs-theme="dark"] .navbar-brand span.text-primary,
+[data-bs-theme="dark"] .navbar-brand i.text-primary,
+[data-bs-theme="dark"] .sidebar .font-heading span.text-primary,
+[data-bs-theme="dark"] footer .btn-outline-primary,
+[data-bs-theme="dark"] .btn-outline-primary.rounded-circle,
+[data-bs-theme="dark"] footer a.text-muted:hover {
+    color: #e58c99 !important; 
+}
+[data-bs-theme="dark"] .nav-link::after,
+[data-bs-theme="dark"] .timeline-line,
+[data-bs-theme="dark"] .timeline-dot {
+    background-color: #e58c99 !important;
+}
+[data-bs-theme="dark"] .timeline-dot,
+[data-bs-theme="dark"] footer .btn-outline-primary,
+[data-bs-theme="dark"] .btn-outline-primary.rounded-circle {
+    border-color: #e58c99 !important;
+}
+
+[data-bs-theme="dark"] .bg-primary-subtle {
+    background-color: rgba(229, 140, 153, 0.15) !important;
 }
