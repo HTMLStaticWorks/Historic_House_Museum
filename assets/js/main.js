@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initActiveLinks();
     initAOS();
     initRTL();
-    initPageTransition();
+    initNavCollapseOnLink();
 });
 
 /**
@@ -94,14 +94,17 @@ function initFormValidation() {
  * Active Link Highlighting
  */
 function initActiveLinks() {
-    const currentLocation = location.pathname.split('/').pop() || 'index.html';
+    const path = window.location.pathname;
+    const page = path.split("/").pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
     
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href === currentLocation) {
+        if (href === page || (page === '' && href === 'index.html')) {
             link.classList.add('active');
             link.setAttribute('aria-current', 'page');
+        } else {
+            link.classList.remove('active');
         }
     });
 }
@@ -150,6 +153,27 @@ function initRTL() {
 }
 
 /**
+ * Close the collapsed navbar after selecting a menu item in tablet/phone view.
+ */
+function initNavCollapseOnLink() {
+    const toggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('#navbarSupportedContent');
+    if (!toggler || !navbarCollapse) return;
+
+    const shouldHandle = () => {
+        return window.innerWidth <= 1024 && window.getComputedStyle(toggler).display !== 'none';
+    };
+
+    navbarCollapse.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (shouldHandle() && navbarCollapse.classList.contains('show')) {
+                toggler.click();
+            }
+        });
+    });
+}
+
+/**
  * RTL Support Helper (Manual switch if needed)
  */
 function toggleRTL() {
@@ -162,35 +186,3 @@ function toggleRTL() {
 /**
  * Fade overlay while navigating between pages to mask the brief blank screen.
  */
-function initPageTransition() {
-    const mask = document.createElement('div');
-    mask.className = 'page-transition-mask';
-    document.body.appendChild(mask);
-
-    const shouldHandle = (link) => {
-        if (!link.href) return false;
-        if (link.target && link.target !== '_self') return false;
-        if (link.hasAttribute('download') || link.getAttribute('aria-disabled') === 'true') return false;
-        const url = new URL(link.href, window.location.href);
-        if (url.origin !== window.location.origin) return false;
-        if (link.hash && url.pathname === window.location.pathname) return false;
-        return true;
-    };
-
-    const onClick = (event) => {
-        const anchor = event.target.closest('a');
-        if (!anchor || !shouldHandle(anchor)) return;
-        event.preventDefault();
-        mask.classList.add('visible');
-        const delay = 280;
-        setTimeout(() => {
-            window.location.assign(anchor.href);
-        }, delay);
-    };
-
-    document.addEventListener('click', onClick, true);
-
-    window.addEventListener('pageshow', () => {
-        mask.classList.remove('visible');
-    });
-}
