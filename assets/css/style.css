@@ -566,8 +566,13 @@ footer.bg-light .border-secondary {
 }
 
 [dir="rtl"] .navbar-brand {
-    margin-left: var(--space-4);
-    margin-right: 0;
+    margin-left: var(--space-5) !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .navbar-nav {
+    padding-right: 0;
+    padding-left: 0;
 }
 
 [dir="rtl"] .ms-auto {
