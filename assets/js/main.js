@@ -34,6 +34,7 @@ function initPreloader() {
  */
 function initStickyHeader() {
     const header = document.querySelector('.navbar');
+    if (!header) return;
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');

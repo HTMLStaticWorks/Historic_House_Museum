@@ -120,6 +120,15 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     transition: background-color var(--transition-base), color var(--transition-base);
+    padding-top: 72px; /* Offset for fixed navbar */
+}
+
+/* Pages without a main navbar (login, register, 404, coming-soon, dashboard) */
+body:has(.auth-wrapper),
+body:has(.soon-wrapper),
+body:has(.error-wrapper),
+body:has(.dashboard-wrapper) {
+    padding-top: 0;
 }
 
 a {
@@ -172,16 +181,24 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
     background-color: var(--navbar-bg) !important;
     backdrop-filter: blur(10px);
-    transition: var(--transition-base);
-    padding: var(--space-2) 0;
-    min-height: 72px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: var(--space-3) 0;
+    min-height: 80px;
     align-items: center;
-    position: relative;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1030;
 }
 
 .navbar.scrolled {
-    padding: var(--space-1) 0;
-    box-shadow: var(--shadow-md);
+    padding: var(--space-2) 0;
+    min-height: 70px;
+    background-color: var(--navbar-bg) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(15px);
 }
 
 /* Navbar Collapse - Reset for Bootstrap compatibility */
