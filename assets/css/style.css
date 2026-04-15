@@ -45,8 +45,10 @@
     --bg-color: #121212;
     --text-color: #f8f9fa;
     --text-muted: #adb5bd;
-    --border-color: #2d2d2d;
+    --border-color: #3a3a3a;
     --card-bg: #1e1e1e;
+    --primary-color: #e58c99;
+    --secondary-color: #e58c99;
     --navbar-bg: rgba(18, 18, 18, 0.95);
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
     --shadow-md: 0 4px 8px rgba(0,0,0,0.4);
@@ -82,6 +84,7 @@ footer span.text-primary {
 [data-bs-theme="dark"] .btn-primary {
     background-color: var(--primary-color) !important;
     border-color: var(--primary-color) !important;
+    color: #121212 !important;
 }
 
 [data-bs-theme="dark"] .btn-outline-primary {
@@ -602,6 +605,14 @@ footer.bg-light .border-secondary {
     margin-right: 0 !important;
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .custom-card .btn {
+        padding-top: 14px;
+        padding-bottom: 14px;
+        font-size: 1.1rem;
+    }
+}
+
 /* ====================================
    PRELOADER
    ==================================== */
@@ -677,6 +688,9 @@ footer.bg-light .border-secondary {
 [data-bs-theme="dark"] .btn-outline-primary.rounded-circle,
 [data-bs-theme="dark"] footer a.text-muted:hover {
     color: #e58c99 !important; 
+}
+[data-bs-theme="dark"] .navbar-brand {
+    color: var(--text-color) !important;
 }
 [data-bs-theme="dark"] .nav-link::after,
 [data-bs-theme="dark"] .timeline-line,
