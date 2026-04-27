@@ -659,6 +659,18 @@ footer.bg-light .border-secondary {
     white-space: nowrap;
 }
 
+@media (max-width: 575.98px) {
+    .login-meta-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.35rem !important;
+    }
+
+    .login-meta-row a {
+        align-self: flex-end;
+    }
+}
+
 .auth-wrapper a:hover {
     text-decoration: underline !important;
 }

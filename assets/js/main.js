@@ -1,10 +1,9 @@
 /**
  * Historic House Museum - Main JS
- * Features: Dark Mode, Sticky Header, Form Validation, Preloader, RTL Support Helper
+ * Features: Dark Mode, Sticky Header, Form Validation, RTL Support Helper
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initPreloader();
     initStickyHeader();
     initDarkMode();
     initFormValidation();
@@ -13,21 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initRTL();
     initNavCollapseOnLink();
 });
-
-/**
- * Preloader Fade Out
- */
-function initPreloader() {
-    const preloader = document.querySelector('#preloader');
-    if (preloader) {
-        setTimeout(() => {
-            preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-        }, 800);
-    }
-}
 
 /**
  * Sticky Header Logic
@@ -183,7 +167,3 @@ function toggleRTL() {
     document.documentElement.setAttribute('dir', newDir);
     localStorage.setItem('dir', newDir);
 }
-
-/**
- * Fade overlay while navigating between pages to mask the brief blank screen.
- */
