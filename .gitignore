@@ -1,0 +1,8 @@
+.gemini/
+.git/
+node_modules/
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.log

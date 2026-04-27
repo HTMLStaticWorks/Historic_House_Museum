@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Blog | Historic House Museum</title>
+    <meta name="description" content="Read stories of history, architecture, and preservation from the curators of the Historic House Museum.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/favicon.svg">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <nav class="navbar navbar-expand-xl fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-house-door-fill text-primary me-2 fs-3"></i>
+                <span class="fw-bold fs-4 font-heading">HISTORIC<span class="text-primary">HOUSE</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Tours & Events</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3 d-flex align-items-center gap-2">
+                            <button class="glow-toggle" id="rtl-toggle" title="Toggle RTL">
+                                <span>RTL</span>
+                            </button>
+                            <button class="glow-toggle" id="theme-toggle" title="Toggle Theme">
+                                <i class="bi bi-sun-fill"></i>
+                            </button>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a href="login.html" class="btn btn-primary btn-sm px-4">Sign In</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="hero-section" style="background-image: url('assets/images/about-hero.png'); height: 40vh;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center">
+            <h1 class="display-4 fw-bold mb-3">Museum Journal</h1>
+            <p class="lead">Uncovering the artifacts and stories of a bygone era.</p>
+        </div>
+    </header>
+
+    <!-- Blog Grid -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Featured Post -->
+                <div class="col-lg-12 mb-4">
+                    <div class="custom-card p-0 overflow-hidden border-0 shadow-sm">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-6">
+                                <div class="bg-dark ratio ratio-16x9">
+                                    <img src="assets/images/about-thumb.png" alt="Featured Post" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-md-6 p-5">
+                                <span class="badge bg-primary mb-3">Preservation</span>
+                                <h2 class="display-6"><a href="blog-details.html" class="text-body text-decoration-none">The Secret Letters of Julia Sterling</a></h2>
+                                <p class="text-muted">A recently discovered collection of letters reveals the personal struggles and triumphs behind the estate's construction.</p>
+                                <div class="d-flex align-items-center mt-4">
+                                    <img src="assets/images/team-archivist.png" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;" alt="Julian Black">
+                                    <div>
+                                        <h6 class="mb-0">Julian Black</h6>
+                                        <span class="text-muted small">March 15, 2026</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regular Posts -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card p-0 overflow-hidden border-0 shadow-sm d-flex flex-column h-100">
+                        <img src="assets/images/hero-home.png" class="img-fluid" alt="Architecture" style="height: 250px; width: 100%; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column h-100">
+                            <span class="text-primary fw-bold small text-uppercase">Architecture</span>
+                            <h4 class="mt-2"><a href="blog-details.html" class="text-body text-decoration-none">Victorian Design Principles</a></h4>
+                            <p class="text-muted small">Understanding the symmetry and symbolism in the Sterling Estate's facade.</p>
+                            <div class="mt-auto">
+                                <a href="blog-details.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card p-0 overflow-hidden border-0 shadow-sm d-flex flex-column h-100">
+                        <img src="assets/images/event-garden.png" class="img-fluid" alt="Gardens" style="height: 250px; width: 100%; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column h-100">
+                            <span class="text-primary fw-bold small text-uppercase">Gardens</span>
+                            <h4 class="mt-2"><a href="blog-details.html" class="text-body text-decoration-none">Spring in the Heirloom Gardens</a></h4>
+                            <p class="text-muted small">Which rare species are blooming this season? A guide from our Gardens Director.</p>
+                            <div class="mt-auto">
+                                <a href="blog-details.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card p-0 overflow-hidden border-0 shadow-sm d-flex flex-column h-100">
+                        <img src="assets/images/about-hero.png" class="img-fluid" alt="Collections" style="height: 250px; width: 100%; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column h-100">
+                            <span class="text-primary fw-bold small text-uppercase">Collections</span>
+                            <h4 class="mt-2"><a href="blog-details.html" class="text-body text-decoration-none">Restoring the 1890 Grand Piano</a></h4>
+                            <p class="text-muted small">A look at the delicate process of bringing a musical masterpiece back to life.</p>
+                            <div class="mt-auto">
+                                <a href="blog-details.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Museum Voices -->
+    <section class="section-padding bg-body-tertiary">
+        <div class="container text-center mb-5">
+            <h2 class="display-5">The Voices of Sterling House</h2>
+            <p class="text-muted">Meet the curators and historians who bring our archives to life.</p>
+        </div>
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center">
+                        <img src="assets/images/team-historian.png" class="rounded-circle shadow mb-3 mx-auto d-block" style="width: 120px; height: 120px; object-fit: cover;" alt="Dr. Arthur Vance">
+                        <h6 class="fw-bold mb-1">Dr. Arthur Vance</h6>
+                        <p class="small text-muted">Senior Curator</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center">
+                        <img src="assets/images/team-curator.png" class="rounded-circle shadow mb-3 mx-auto d-block" style="width: 120px; height: 120px; object-fit: cover;" alt="Elena Thorne">
+                        <h6 class="fw-bold mb-1">Elena Thorne</h6>
+                        <p class="small text-muted">Lead Historian</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center">
+                        <img src="assets/images/team-archivist.png" class="rounded-circle shadow mb-3 mx-auto d-block" style="width: 120px; height: 120px; object-fit: cover;" alt="Julian Black">
+                        <h6 class="fw-bold mb-1">Julian Black</h6>
+                        <p class="small text-muted">Digital Archivist</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center">
+                        <img src="assets/images/team-gardens.png" class="rounded-circle shadow mb-3 mx-auto d-block" style="width: 120px; height: 120px; object-fit: cover;" alt="Sarah Rose">
+                        <h6 class="fw-bold mb-1">Sarah Rose</h6>
+                        <p class="small text-muted">Gardens Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join the Chronicle (Newsletter) -->
+    <section class="section-padding position-relative text-white overflow-hidden">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-image: url('assets/images/pricing-hero.png'); background-size: cover; background-position: center;">
+            <div class="w-100 h-100 bg-dark opacity-75"></div>
+        </div>
+        <div class="container position-relative py-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-7">
+                    <span class="text-secondary fw-bold text-uppercase tracking-widest">Stay Connected</span>
+                    <h2 class="display-4 mt-2 mb-4">Join The Sterling Chronicle</h2>
+                    <p class="lead mb-5">Receive monthly deep-dives into our architectural preservation work, exclusive event previews, and stories from the archive directly to your inbox.</p>
+                    <form class="row g-2 justify-content-center needs-validation" novalidate>
+                        <div class="col-md-7">
+                            <input type="email" class="form-control form-control-lg border-0" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="small text-white-50 mt-4">By subscribing, you agree to our Service Policy and Terms of Use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-body-tertiary section-padding pb-4">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <a href="index.html" class="d-inline-flex align-items-center text-decoration-none mb-4"><i class="bi bi-house-door-fill text-primary me-2 fs-3"></i><span class="fw-bold fs-4 font-heading text-body">HISTORIC<span class="text-primary">HOUSE</span></span></a>
+                    <p class="text-muted pe-lg-5">Preserving the past to inspire the future. Join us in our mission to maintain this cultural landmark for generations to come.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3">
+                    <h6 class="fw-bold mb-4">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-muted">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-muted">About Us</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-muted">Tours</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-muted">Admission</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3">
+                    <h6 class="fw-bold mb-4">Support</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="contact.html" class="text-muted">Contact</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-muted">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="fw-bold mb-4">Newsletter</h6>
+                    <p class="text-muted mb-4">Subscribe to receive updates on special events and exhibitions.</p>
+                    <form class="input-group mb-3 needs-validation" novalidate>
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25">
+            <div class="row py-3">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted mb-0">&copy; 2026 Historic House Museum. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-muted mb-0">
+                        <a href="#" class="text-muted text-decoration-none me-3">Service Policy</a>
+                        <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
