@@ -33,7 +33,7 @@
 </head>
 <body>
 
-    <div class="position-fixed top-0 end-0 p-3 z-3 d-flex gap-2">
+    <div class="position-fixed top-0 end-0 p-3 z-3 d-flex gap-2 auth-toggle-group">
         <button class="glow-toggle text-white" id="rtl-toggle" title="Toggle RTL">
             <span>RTL</span>
         </button>
@@ -66,13 +66,13 @@
                             <i class="bi bi-eye"></i>
                         </button>
                     </div>
-                    <div class="float-end mt-1">
-                        <a href="#" class="small text-primary">Forget password</a>
+                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 mt-2">
+                        <div class="form-check d-flex align-items-center gap-2 mb-0 ps-0">
+                            <input type="checkbox" class="form-check-input ms-0 mt-0" id="remember">
+                            <label class="form-check-label small mb-0" for="remember">Remember me for 30 days</label>
+                        </div>
+                        <a href="#" class="small text-primary">Forgot password?</a>
                     </div>
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="remember">
-                    <label class="form-check-label small" for="remember">Remember me for 30 days</label>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg w-100 mt-2">Sign In</button>
 

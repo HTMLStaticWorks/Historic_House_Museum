@@ -541,7 +541,7 @@ footer.bg-light .border-secondary {
 .glow-toggle {
     cursor: pointer;
     font-size: 1.25rem;
-    color: var(--text-muted);
+    color: var(--primary-color);
     transition: all 0.3s ease;
     padding: 6px;
     border: 2px solid transparent;
@@ -568,16 +568,20 @@ footer.bg-light .border-secondary {
     background-color: rgba(0, 255, 213, 0.05);
 }
 
+[data-bs-theme="dark"] .glow-toggle:not(.active) {
+    color: #e58c99;
+}
+
 [data-bs-theme="dark"] .glow-toggle {
-    color: #adb5bd;
+    color: #e58c99;
 }
 
 .navbar .glow-toggle:hover {
-    color: var(--primary-color);
-    background-color: rgba(114, 47, 55, 0.08);
-    border-color: rgba(114, 47, 55, 0.25);
+    color: #00ffd5;
+    background-color: rgba(0, 255, 213, 0.08);
+    border-color: rgba(0, 255, 213, 0.3);
+    text-shadow: 0 0 10px rgba(0, 255, 213, 0.8);
     box-shadow: none;
-    text-shadow: none;
 }
 
 /* RTL Specifics */
@@ -605,6 +609,39 @@ footer.bg-light .border-secondary {
     margin-right: 0 !important;
 }
 
+.auth-toggle-group {
+    z-index: 1055;
+}
+
+.auth-toggle-group .glow-toggle {
+    color: #fff !important;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.auth-toggle-group .glow-toggle:hover {
+    color: #fff !important;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 767.98px) {
+    .auth-toggle-group {
+        top: 0.75rem !important;
+        right: 0.75rem !important;
+    }
+}
+
+.auth-wrapper .form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.auth-wrapper .form-check-label {
+    margin-left: 0;
+}
+
 @media (min-width: 768px) and (max-width: 991.98px) {
     .custom-card .btn {
         padding-top: 14px;
@@ -617,29 +654,11 @@ footer.bg-light .border-secondary {
    PRELOADER
    ==================================== */
 #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+    display: none !important;
 }
 
 .spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid var(--border-color);
-    border-top-color: var(--primary-color);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
+    display: none !important;
 }
 
 /* ====================================
